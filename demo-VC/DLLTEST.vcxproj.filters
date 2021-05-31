@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="RoundSliderCtrl">
+      <UniqueIdentifier>{e2c82bef-b41d-4231-83cf-068d573f426b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\DLLTEST.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DLLTEST.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\idr_main.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\off.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\on.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DLLTEST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DLLTESTDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RoundSliderCtrl.h">
+      <Filter>RoundSliderCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleRoundSliderCtrl.h">
+      <Filter>RoundSliderCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeRoundSliderCtrl.h">
+      <Filter>RoundSliderCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="VlgRoundSliderCtrl.h">
+      <Filter>RoundSliderCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMemDC.h">
+      <Filter>RoundSliderCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="AdvPlot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdvPlotBasic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lineattribute.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VdsoLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DLLTEST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLTESTDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RoundSliderCtrl.cpp">
+      <Filter>RoundSliderCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleRoundSliderCtrl.cpp">
+      <Filter>RoundSliderCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeRoundSliderCtrl.cpp">
+      <Filter>RoundSliderCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="VlgRoundSliderCtrl.cpp">
+      <Filter>RoundSliderCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="AdvPlot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lineattribute.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DLLTEST.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,53 @@
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.ipch
+*.gch
+*.pch
+*.pdb
+*.idb
+.vs
+*.sdf
+*.opensdf
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+#
+*.log
+*.tlog
+*.spd
+*.iic
+*.cache
+*.aps
+*.db
+
+# 忽略指定文件夹下的除某一文件之外的其他文件 parent_dir/!spec_file_name.html
+# 忽略指定文件夹下的除某一类后缀名的文件 parent_dir/*[!*.html]
+!Driver/x86/*
+!Driver/amd64/*
+!Dll/X64/*
+!Dll/Win32/*
+
+

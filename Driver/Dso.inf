@@ -1,0 +1,144 @@
+; InstruStart Electronic Technology Dso Driver INF
+; Copyright (c) 2011 InstruStart Electronic Technology Corporation
+
+[Version]
+Signature = "$Windows NT$"
+Class = USB
+ClassGuid={36FC9E60-C465-11CF-8056-444553540000}
+Provider = %ProviderName%
+DriverVer=07/14/2009,6.1.7600.16385
+CatalogFile=Dso.cat
+
+; ========== Manufacturer/Models sections ===========
+
+[Manufacturer]
+%ProviderName% = OSC_WinUSB,NTx86,NTamd64
+
+[OSC_WinUSB.NTx86]
+%USB\OSCDevice.DeviceDesc% = USB_Install, USB\VID_d4a2&PID_5660
+%USB\OSCDeviceVer5.DeviceDesc% = USBVer5_Install, USB\VID_d4a2&PID_5661
+%USB\OSCDeviceVer6.DeviceDesc% = USBVer6_Install, USB\VID_d4a2&PID_5662
+
+[OSC_WinUSB.NTamd64]
+%USB\OSCDevice.DeviceDesc% = USB_Install, USB\VID_d4a2&PID_5660
+%USB\OSCDeviceVer5.DeviceDesc% = USBVer5_Install, USB\VID_d4a2&PID_5661
+%USB\OSCDeviceVer6.DeviceDesc% = USBVer6_Install, USB\VID_d4a2&PID_5662
+
+; =================== Installation ===================
+
+;[1]
+[USB_Install]
+Include=winusb.inf
+Needs=WINUSB.NT
+
+USBVer5_Install
+Include=winusb.inf
+Needs=WINUSB.NT
+
+USBVer6_Install
+Include=winusb.inf
+Needs=WINUSB.NT
+
+;[2]
+[USB_Install.Services]
+Include=winusb.inf
+AddService=WinUSB,0x00000002,WinUSB_ServiceInstall
+
+[USBVer5_Install.Services]
+Include=winusb.inf
+AddService=WinUSB,0x00000002,WinUSB_ServiceInstall
+
+[USBVer6_Install.Services]
+Include=winusb.inf
+AddService=WinUSB,0x00000002,WinUSB_ServiceInstall
+
+;[3]
+[WinUSB_ServiceInstall]
+DisplayName     = %WinUSB_SvcDesc%
+ServiceType     = 1
+StartType       = 3
+ErrorControl    = 1
+ServiceBinary   = %12%\winusb.sys
+
+;[4]
+[USB_Install.Wdf]
+KmdfService=WINUSB, WinUsb_Install
+
+[USBVer5_Install.Wdf]
+KmdfService=WINUSB, WinUsb_Install
+
+[USBVer6_Install.Wdf]
+KmdfService=WINUSB, WinUsb_Install
+
+[WinUSB_Install]
+KmdfLibraryVersion=1.9
+
+;[5]
+[USB_Install.HW]
+AddReg=Dev_AddReg
+
+[USBVer5_Install.HW]
+AddReg=Dev_AddRegVer5
+
+[USBVer6_Install.HW]
+AddReg=Dev_AddRegVer6
+
+[Dev_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{6B156A6D-9CEC-4DCB-8145-963E45F6790F}"
+
+[Dev_AddRegVer5]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{7C49CBB1-780E-4603-AE4C-0B18B8E6D8B9}"
+
+[Dev_AddRegVer6]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{FF2A876C-4E6F-9EAD-4962-4839B8EF7B68}"
+
+;[6]
+[USB_Install.CoInstallers]
+AddReg=CoInstallers_AddReg
+CopyFiles=CoInstallers_CopyFiles
+
+[USBVer5_Install.CoInstallers]
+AddReg=CoInstallers_AddReg
+CopyFiles=CoInstallers_CopyFiles
+
+[USBVer6_Install.CoInstallers]
+AddReg=CoInstallers_AddReg
+CopyFiles=CoInstallers_CopyFiles
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WdfCoInstaller01009.dll,WdfCoInstaller","WinUSBCoInstaller2.dll"
+
+[CoInstallers_CopyFiles]
+WinUSBCoInstaller2.dll
+WdfCoInstaller01009.dll
+
+[DestinationDirs]
+CoInstallers_CopyFiles=11
+
+; ================= Source Media Section =====================
+;[7]
+
+[SourceDisksNames.x86]
+1 = %DISK_NAME%,,,\x86
+
+[SourceDisksNames.amd64]
+2 = %DISK_NAME%,,,\amd64
+
+[SourceDisksFiles.x86]
+WinUSBCoInstaller2.dll=1
+WdfCoInstaller01009.dll=1
+
+[SourceDisksFiles.amd64]
+WinUSBCoInstaller2.dll=2
+WdfCoInstaller01009.dll=2
+
+; =================== Strings ===================
+
+[Strings]
+ProviderName="YiXingDianZi"
+USB\OSCDevice.DeviceDesc="YiXingDianZi USB DSO Driver"
+USB\OSCDeviceVer5.DeviceDesc="YiXingDianZi USB DSO(v5) Driver"
+USB\OSCDeviceVer6.DeviceDesc="YiXingDianZi USB DSO(v6) Driver"
+WinUSB_SvcDesc="YiXingDianZi USB DSO"
+DISK_NAME="YiXingDianZi DSO Driver Installation Disk"
+
