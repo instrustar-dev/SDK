@@ -1,0 +1,11 @@
+A.最新版的DLL采用VS2019编译，运行的电脑需要安装相应的动态库
+The latest version of the DLL is compiled with VS2019, and the running computer needs to install the corresponding dynamic library
+1，You can install our software and install VC2019 dynamic library automatically
+2，Download the address separately
+     下载地址/Download Address    www.instrustar.com\upload\software\VC2019runtime.zip
+
+B. Modify the location of the DLL based on your system.  My is  'D:\SDK-github-push\Dll\X64\VDSO.dll'
+## python 64bit load this
+mdll = ctypes.WinDLL('D:\SDK-github-push\Dll\X64\VDSO.dll')
+## python 32bit load this
+#mdll = ctypes.WinDLL('D:\SDK-github-push\Dll\Win32\VDSO.dll')

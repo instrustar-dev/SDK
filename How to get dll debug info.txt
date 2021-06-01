@@ -1,0 +1,3 @@
+unzip the DebugView.zip
+run Dbgview.exe
+the dll debug info will display
