@@ -199,6 +199,9 @@ CRoundSliderCtrl::CRoundSliderCtrl()
 
 CRoundSliderCtrl::~CRoundSliderCtrl()
 {
+	DeleteObject(m_hKnobBrush);
+	DeleteObject(m_hDialBrush);
+	DeleteObject(m_hwndBrush);
 }
 
 BEGIN_MESSAGE_MAP(CRoundSliderCtrl, CSliderCtrl)
