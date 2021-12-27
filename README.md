@@ -18,6 +18,5 @@ The Sdk of Instrustar Series Oscilloscopes. The open source support ISDS205 ISDS
 	make install / sudo make install
 2,copy so "./linux/*.so" file to your system dynamic libraries
 	like /lib or /usr/lib or /usr/lib/x86_64-linux-gnu
-
 3,Compile dlltest and then run
 
