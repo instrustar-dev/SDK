@@ -2,13 +2,19 @@ import ctypes
 #from ctypes import CDLL ## for 64bit code
 #from ctypes import WinDLL
 from ctypes import *
-import sys
+
+import os
+## python 64bit load this
+os.add_dll_directory("D:\github-SDK\SharedLibrary\Windows\X64\Release")
+#os.environ["PATH"] += ";D:\github-SDK\windows\Dll\X64"
+## python 32bit load this
+#os.add_dll_directory("D:\github-SDK\windows\Dll\Win32")
+#os.environ["PATH"] += ";D:\github-SDK\windows\Dll\Win32"
+#print ('path: ', os.environ["PATH"])
+
 
 ## load library   __stdcall using  windll
-## python 64bit load this
-mdll = ctypes.WinDLL('D:\SDK-github-push\Dll\X64\VDSO.dll')
-## python 32bit load this
-#mdll = ctypes.WinDLL('D:\SDK-github-push\Dll\Win32\VDSO.dll')
+mdll = ctypes.WinDLL("VDSO.dll")
 
 ############################ Initialization/Finished Dll ##############################
 ## init Dll
@@ -98,8 +104,21 @@ def DevDataReadyCallBack_func(p):
     totallength = fGetMemoryLength()*1024;
     arraytypedouble = ctypes.c_double * totallength
     datas = arraytypedouble()
-    l = fReadVoltageDatas(ctypes.c_char(0), datas, totallength);
-    print('## fReadVoltageDatas',l)
+    num = fReadVoltageDatas(ctypes.c_char(0), datas, totallength);
+    minv = datas[0];
+    maxv = datas[0];
+    for index in range(num):
+        if(datas[index]<minv):
+            minv = datas[index];
+        if(datas[index]>maxv):
+            maxv = datas[index];
+    print('## fReadVoltageDatas',num)
+    print(' minv',minv)
+    print(' maxv',maxv)
+
+    #Next Capture
+    length = fGetMemoryLength();
+    fCapture(length);
     return 0
     
 ##USB status
