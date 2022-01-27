@@ -78,7 +78,15 @@ int main()
             if (IsDataReady())
             {
                 unsigned int len = ReadVoltageDatas(0, buffer, mem_length);
-                std::cout << "ReadVoltageDatas " << len << '\n';
+                
+				double minv=buffer[0];
+				double maxv=buffer[0];
+				for(unsigned int i=0; i<len; i++)
+				{
+					minv = buffer[i]<minv? buffer[i]:minv;
+					maxv = buffer[i]>maxv? buffer[i]:maxv;
+				}
+				std::cout << "ReadVoltageDatas " << len <<" minv " << minv << " maxv " << maxv << '\n';
 
                 Capture(mem_length / 1024, 0);
             }

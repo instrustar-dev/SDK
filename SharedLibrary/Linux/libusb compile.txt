@@ -1,0 +1,16 @@
+tar xvjf libusb-1.0.24.tar.bz2
+	
+*******************************x86_64-linux************************
+./configure --build=x86_64-linux --prefix=/usr/libusb_x86_64/libusb --disable-udev	
+make
+make install
+
+*******************************arm-linux-gnueabi-gcc************************
+sudo  ./configure --build=i686-linux --host=arm-linux --prefix=/usr/libusb_gnueabi/libusb CC=arm-linux-gnueabi-gcc CXX=arm-linux-gnueabi-g++ --disable-udev
+sudo make
+sudo make install
+
+*******************************x86_64-linux************************
+sudo  ./configure --build=i686-linux --host=arm-linux --prefix=/usr/libusb_gnueabihf/libusb CC=arm-linux-gnueabihf-gcc CXX=arm-linux-gnueabihf-g++ --disable-udev
+sudo make
+sudo make install
