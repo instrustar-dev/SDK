@@ -444,6 +444,18 @@ Description  This routines return the voltage datas is out range or not.
  ******************************************************************************************/
 DLL_API int WINAPI IsVoltageDatasOutRange(char channel);
 
+/******************************************************************************************
+Description  This routines return the current voltage resolution value
+	One ADC resolution for the voltage value: 
+		Full scale is 1000mv 
+		the ADC is 8 bits
+		voltage resolution value = 1000mV/256
+	Input:     channel     read channel	0 :channel 1
+¡¡¡¡									1 :channel 2
+	Output     Return value : voltage resolution value
+ ******************************************************************************************/
+DLL_API double WINAPI GetVoltageResolution(char channel);
+
 //******************************************Read Data***********************************************
 
 ///////////////////////////////////////////////////////////////////////////Oscilloscope///////////////////////////////////////////////////////////////////////////
