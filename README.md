@@ -19,7 +19,7 @@ The Sdk of Instrustar Series Oscilloscopes. The open source support ISDS205 ISDS
 	
 	a  command line Demo written with c++, test in windows and ubuntu linux
 
-4,DllTestQt
+5,DllTestQt
 
 	a Demo written with Qt, test in windows and ubuntu linux
 	Note:To start Qt, please use sudo. This ensures that libusb can correctly detect the device
