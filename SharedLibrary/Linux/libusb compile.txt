@@ -10,7 +10,12 @@ sudo  ./configure --build=i686-linux --host=arm-linux --prefix=/usr/libusb_gnuea
 sudo make
 sudo make install
 
-*******************************x86_64-linux************************
+*******************************arm-linux-gnueabihf************************
 sudo  ./configure --build=i686-linux --host=arm-linux --prefix=/usr/libusb_gnueabihf/libusb CC=arm-linux-gnueabihf-gcc CXX=arm-linux-gnueabihf-g++ --disable-udev
+sudo make
+sudo make install
+
+*******************************aarch64-linux************************
+sudo  ./configure --build=i686-linux --host=arm-linux --prefix=/usr/libusb_aarch64/libusb CC=aarch64-linux-gnu-gcc-10 CXX=aarch64-linux-gnu-g++-10 --disable-udev
 sudo make
 sudo make install
